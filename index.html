@@ -8,35 +8,32 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <div class="block" id="block1">
+    <div class="block" id="block1" data-navigation="#home">
+
+      <div class="navigation_bar">
+          <ul>
+            <li class="nav selected"><a href="#home">Home</a></li>
+            <li class="nav"><a href="#popular_destinations">Popular Destinations</a></li>
+            <li class="nav"><a href="#honeymoon_registry">Honeymoon Registry</a></li>
+            <li class="nav"><a href="#about">About</a></li>
+            <li class="nav"><a href="#contact">Contact</a></li>
+          </ul>
+      </div>
 
       <div class="row">
-        <a name="home" data-magellan-destination="home"></a>
-        <div data-magellan-expedition="fixed">
-          <ul class="sub-nav">
-            <li data-magellan-arrival="home"><a class="nav_link" href="#home">Home</a></li>
-            <li data-magellan-arrival="popular_destinations"><a class="nav_link" href="#popular_destinations">Popular Desitnations</a></li>
-            <li data-magellan-arrival="honeymoon_registry"><a class="nav_link" href="#honeymoon_registry">Honeymoon Registry</a></li>
-            <li data-magellan-arrival="about"><a class="nav_link" href="#about">About</a></li>
-            <li data-magellan-arrival="contact"><a class="nav_link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        
         <div class="large-12 medium-12 small-12 columns">
           <h1 id='logo'>Welcome to AJ&E Travel</h1>
         </div>
-
-
-          <!-- <a href="#popular_destinations"><img src="images/next.png" alt="next" id="next_image" /></a> -->
       </div>
-
-      
+      <div class="row">
+        <div class="large-2 large-centered medium-2 medium-centered small-4 small-centered columns">
+          <img src="images/next.png" alt="next" />
+        </div>
+      </div>
 
     </div>
 
-    <div class="block" id="block2" data-magellan-destination="popular_destinations">
-      <a name="popular_destinations"></a>
+    <div class="block" id="block2" data-navigation="#popular_destinations">
       <div class="row">
         <div class="large-6 medium-6 small-12 columns">
           <h2>Popular Destinations</h2>

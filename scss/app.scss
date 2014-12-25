@@ -39,59 +39,104 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+$time: 0.1s;
 //Global Styling
-
 @media #{$small-only} { 
   #logo{
     font-size: 20vw;
   }
+  .navigation_bar ul li a{
+    font-size: 0.6em;
+  } 
 }
-
 @media #{$medium-only} { 
   #logo{
     font-size: 15vw;
   }
+  .navigation_bar ul li a{
+    font-size: .8em;
+  }
 }
-
 @media #{$large-up} { 
   #logo{
     font-size: 10vw;
   }
-}
-.side-nav{
-  margin:0;
-  padding:0;
-}
-.nav_link{
-  font-size: 1.5vw;
-  font-family: "Raleway";
-  color:#000000 !important;
+  .navigation_bar ul li a{
+    font-size: 1em;
+  }
 }
 #spacing{
   height:10vh;
 }
 #logo{
-  text-align: left;
+  text-align: center;
   padding: 0 !important;
-  margin: 5vh 0 0 0 !important;
+  margin: 10vh 0 0 0 !important;
   color:#FFFFFF;
 }
 .block{
   min-height: 100%;
 }
-
-.sub-nav{
-  float: right !important;
+.navigation_bar{
+  background-color: #FFFFFF;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 99;
+}
+.navigation_bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navigation_bar ul li{
+  display: inline-block;
+  padding:0.5vw 1vw;
+  margin: 1vw 0;
+  border-radius: 5px;
+}
+.navigation_bar ul li a{
+  font-family: "Raleway";
+}
+.navigation_bar ul li:hover{
+  background-color: $primary-color;
+  cursor: pointer;
+  a{
+    color:#FFFFFF;
+    -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+  }
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
 }
 
+.navigation_bar ul li.selected{
+  background-color: $primary-color;
+  a{
+    color:#FFFFFF;
+  }
+}
+
+
+.red{
+  background-color: red;
+}
+.blue{
+  background-color: blue;
+}
+
+
+//Block1 Styling
 #next_image{
   width:20%;
   display: block;
   margin: auto;
   text-align: center;
 }
-
-
 #block1{
   @include background(image-url("spinalonga.jpg"));
   background-repeat: no-repeat;
@@ -99,18 +144,12 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+//Block2 Styling
 #block2{
-  margin: 5vh 0;
+  padding: 5vh 0;
   height: 1500px;
+  background-color: $vapor;
 }
-.transparency_gradient{
-  background: rgba(255, 255, 255, 0.4) !important;
-  padding:0 !important;
-}
-.red{
-  background-color: red;
-}
-.blue{
-  background-color: blue;
-}
+
 
