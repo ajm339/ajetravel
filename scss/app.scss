@@ -51,6 +51,10 @@ $time: 0.1s;
   .sub_header{
     font-size: 10vw;
   }
+  .popular_destinations{
+    width: 60vw;  
+    height: 40vw;
+  }
 }
 @media #{$medium-only} { 
   #logo{
@@ -62,6 +66,10 @@ $time: 0.1s;
   .sub_header{
     font-size: 7vw;
   }
+  .popular_destinations{
+    width: 30vw;  
+    height: 20vw;
+  }
 }
 @media #{$large-up} { 
   #logo{
@@ -72,6 +80,10 @@ $time: 0.1s;
   }
   .sub_header{
     font-size: 4vw;
+  }
+  .popular_destinations{
+    width: 22vw;  
+    height: 15vw;
   }
 }
 #logo{
@@ -153,17 +165,44 @@ $time: 0.1s;
 //Block2 Styling
 #block2{
   padding: 5vh 0;
-  height: 1500px;
   background-color: $vapor;
 }
 .popular_destinations{
-  /*width:225px !important;*/
-  /*height:170px !important;*/
-  margin:1vw;
+  display: block;
+  margin: 1vh auto;
+  text-align: center;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
+  border:solid;
+  border-color:$oil;
+  border-width:1px;
+  cursor: pointer;
+  span.popular_destinations_text{
+    opacity:0;
+    display: table-cell;
+    vertical-align: middle;
+    color:$ghost;
+    text-align: center;
+    padding:1vw;
+    font-weight: 100;
+  }
 }
+div.popular_destinations:hover{
+  span.popular_destinations_text{
+    width:inherit;
+    height:inherit;
+    opacity:1;
+    vertical-align: middle;
+    background:rgba(41, 48, 55, 0.7) !important;
+  }
+
+  -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+
 #hawaii{
   @include background(image-url("hawaii.jpg"));
 }
@@ -183,4 +222,36 @@ $time: 0.1s;
   @include background(image-url("mexico.jpg"));
 }
 
+//Block 3 Styling
+#block3{
+  @include background(image-url("wedding.jpg"));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#honeymoon_registry_header{
+  margin: 5vh 0;
+}
 
+//Block 4 Styling
+#block4{
+  padding: 5vh 0;
+  background-color: $secondary-color;
+}
+p.contact_text{
+  text-align: justify;
+}
+#contact_information_container{
+  display: table;
+  height: inherit;
+}
+#contact_information_text{
+  margin:10% auto;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  h3{
+    font-family: "Raleway";
+  }
+}
