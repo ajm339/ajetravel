@@ -15,7 +15,7 @@ $(document).foundation().ready(function(){
 
     var $dom_object = $("div.block[data-destination='" + $destination + "']");
     var coordinates = $dom_object.offset();
-    var location = coordinates.top - nav_bar_height + 2;
+    var location = coordinates.top - nav_bar_height + 5;
     if(location<0){
       location = 0;
     }
