@@ -65,13 +65,10 @@ $time: 0.1s;
     font-size: 1em;
   }
 }
-#spacing{
-  height:10vh;
-}
 #logo{
   text-align: center;
   padding: 0 !important;
-  margin: 10vh 0 0 0 !important;
+  margin: 15vh 0 0 0 !important;
   color:#FFFFFF;
 }
 .block{
@@ -113,12 +110,14 @@ $time: 0.1s;
   -o-transition: all $time ease-in-out;
   transition: all $time ease-in-out;
 }
-
 .navigation_bar ul li.selected{
   background-color: $primary-color;
   a{
     color:#FFFFFF;
   }
+}
+.sub_header{
+  font-size: 4vw;
 }
 
 

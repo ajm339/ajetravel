@@ -8,15 +8,15 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <div class="block" id="block1" data-navigation="#home">
+    <div class="block" id="block1" data-destination="#home">
 
       <div class="navigation_bar">
           <ul>
-            <li class="nav selected"><a href="#home">Home</a></li>
-            <li class="nav"><a href="#popular_destinations">Popular Destinations</a></li>
-            <li class="nav"><a href="#honeymoon_registry">Honeymoon Registry</a></li>
-            <li class="nav"><a href="#about">About</a></li>
-            <li class="nav"><a href="#contact">Contact</a></li>
+            <li class="nav selected" data-navigation="#home"><a href="#home">Home</a></li>
+            <li class="nav" data-navigation="#popular_destinations"><a href="#popular_destinations">Popular Destinations</a></li>
+            <li class="nav" data-navigation="#honeymoon_registry"><a href="#honeymoon_registry">Honeymoon Registry</a></li>
+            <li class="nav" data-navigation="#about"><a href="#about">About</a></li>
+            <li class="nav" data-navigation="#contact"><a href="#contact">Contact</a></li>
           </ul>
       </div>
 
@@ -27,16 +27,16 @@
       </div>
       <div class="row">
         <div class="large-2 large-centered medium-2 medium-centered small-4 small-centered columns">
-          <img src="images/next.png" alt="next" />
+          <div class="nav"><a href="#popular_destinations"><img src="images/next.png" alt="next" /></a></div>
         </div>
       </div>
 
     </div>
 
-    <div class="block" id="block2" data-navigation="#popular_destinations">
+    <div class="block" id="block2" data-destination="#popular_destinations">
       <div class="row">
         <div class="large-6 medium-6 small-12 columns">
-          <h2>Popular Destinations</h2>
+          <h2 class='sub_header'>Popular Destinations</h2>
         </div>
         <div class="large-6 medium-6 small-12 columns">
           <div class="large-6 medium -6 small-6 columns vacation_block">

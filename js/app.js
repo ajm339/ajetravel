@@ -6,13 +6,14 @@ $(document).foundation().ready(function(){
   var $previous_navigation_selection = $('li.nav.selected');
 
   $('.nav').on('click', function(){
-    var $this_dom = $(this);
+    var $destination = $(this).find('a').attr('href');
+
+    var $this_dom = $(".nav[data-navigation='" + $destination + "']");
     $previous_navigation_selection.toggleClass('selected');
     $this_dom.toggleClass('selected');
     $previous_navigation_selection = $this_dom;
 
-    var $destination = $(this).find('a').attr('href');
-    var $dom_object = $("div.block[data-navigation='" + $destination + "']");
+    var $dom_object = $("div.block[data-destination='" + $destination + "']");
     var coordinates = $dom_object.offset();
     var location = coordinates.top - nav_bar_height + 2;
     if(location<0){
@@ -21,6 +22,5 @@ $(document).foundation().ready(function(){
 
     $('body').animate({"scrollTop": location}, "slow");
 
-    
     });
 });
