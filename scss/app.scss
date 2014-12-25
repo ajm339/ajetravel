@@ -42,20 +42,21 @@
 //Global Styling
 
 @media #{$small-only} { 
-  .nav_link{
-    /*font-size: 12px;*/
-  }
-  #side-nav_container{
-    width:200% !important;
+  #logo{
+    font-size: 20vw;
   }
 }
 
 @media #{$medium-only} { 
-
+  #logo{
+    font-size: 15vw;
+  }
 }
 
 @media #{$large-up} { 
-
+  #logo{
+    font-size: 10vw;
+  }
 }
 .side-nav{
   margin:0;
@@ -70,22 +71,37 @@
   height:10vh;
 }
 #logo{
-  font-size: 15vw;
-  text-align: right;
+  text-align: left;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 5vh 0 0 0 !important;
   color:#FFFFFF;
 }
+.block{
+  min-height: 100%;
+}
+
+.sub-nav{
+  float: right !important;
+}
+
+#next_image{
+  width:20%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+
 #block1{
   @include background(image-url("spinalonga.jpg"));
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
 }
 #block2{
   margin: 5vh 0;
+  height: 1500px;
 }
 .transparency_gradient{
   background: rgba(255, 255, 255, 0.4) !important;

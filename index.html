@@ -11,28 +11,32 @@
     <div class="block" id="block1">
 
       <div class="row">
-
-       <div id="spacing"></div>
-
-        <div class="large-2 medium-2 small-2 columns">
-          <div class="transparency_gradient" id='side-nav_container'>
-            <ul class="side-nav" role="navigation" title="Link List">
-             <li role="menuitem"><a class="nav_link" href="#">Popular Desitnations</a></li>
-             <li role="menuitem"><a class="nav_link" href="#">Honeymoon Registry</a></li>
-             <li role="menuitem"><a class="nav_link" href="#">About</a></li>
-             <li role="menuitem"><a class="nav_link" href="#">Contact</a></li>
-           </ul>
-          </div>
+        <a name="home" data-magellan-destination="home"></a>
+        <div data-magellan-expedition="fixed">
+          <ul class="sub-nav">
+            <li data-magellan-arrival="home"><a class="nav_link" href="#home">Home</a></li>
+            <li data-magellan-arrival="popular_destinations"><a class="nav_link" href="#popular_destinations">Popular Desitnations</a></li>
+            <li data-magellan-arrival="honeymoon_registry"><a class="nav_link" href="#honeymoon_registry">Honeymoon Registry</a></li>
+            <li data-magellan-arrival="about"><a class="nav_link" href="#about">About</a></li>
+            <li data-magellan-arrival="contact"><a class="nav_link" href="#contact">Contact</a></li>
+          </ul>
         </div>
 
-        <div class="large-10 medium-10 small-10 columns">
+        
+        <div class="large-12 medium-12 small-12 columns">
           <h1 id='logo'>Welcome to AJ&E Travel</h1>
         </div>
+
+
+          <!-- <a href="#popular_destinations"><img src="images/next.png" alt="next" id="next_image" /></a> -->
       </div>
+
+      
 
     </div>
 
-    <div class="block" id="block2">
+    <div class="block" id="block2" data-magellan-destination="popular_destinations">
+      <a name="popular_destinations"></a>
       <div class="row">
         <div class="large-6 medium-6 small-12 columns">
           <h2>Popular Destinations</h2>
@@ -65,8 +69,6 @@
         </div>
       </div>
     </div>
-    
-   
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
