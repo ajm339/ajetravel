@@ -86,15 +86,18 @@ $include-html-global-classes: $include-html-classes;
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-
-
 @import "compass/css3";
  
 @include font-face("BebasNeue Bold", font-files("BebasNeue Bold.ttf"));
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+
+// We use these to define default font stacks
+// $font-family-sans-serif: "Open Sans", Arial, sans-serif;
+// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 
 // We use these to define default font weights
@@ -238,7 +241,7 @@ $include-html-global-classes: $include-html-classes;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
+$paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;

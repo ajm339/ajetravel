@@ -39,12 +39,62 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-#logo{
-  font-size: 4 rem;
+//Global Styling
+
+@media #{$small-only} { 
+  .nav_link{
+    /*font-size: 12px;*/
+  }
+  #side-nav_container{
+    width:200% !important;
+  }
 }
-.blue{
-  background-color:blue;
+
+@media #{$medium-only} { 
+
+}
+
+@media #{$large-up} { 
+
+}
+.side-nav{
+  margin:0;
+  padding:0;
+}
+.nav_link{
+  font-size: 1.5vw;
+  font-family: "Raleway";
+  color:#000000 !important;
+}
+#spacing{
+  height:10vh;
+}
+#logo{
+  font-size: 15vw;
+  text-align: right;
+  padding: 0 !important;
+  margin: 0 !important;
+  color:#FFFFFF;
+}
+#block1{
+  @include background(image-url("spinalonga.jpg"));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+#block2{
+  margin: 5vh 0;
+}
+.transparency_gradient{
+  background: rgba(255, 255, 255, 0.4) !important;
+  padding:0 !important;
 }
 .red{
-  background-color:red;
+  background-color: red;
 }
+.blue{
+  background-color: blue;
+}
+
