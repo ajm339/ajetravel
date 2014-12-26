@@ -40,6 +40,7 @@
 //   "foundation/components/visibility";
 
 $time: 0.1s;
+$time2: 0.8s;
 //Global Styling
 @media #{$small-only} { 
   #logo{
@@ -135,7 +136,15 @@ $time: 0.1s;
   background-color: $primary-color;
   a{
     color:#FFFFFF;
+    -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
   }
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
 }
 
 
@@ -167,7 +176,7 @@ $time: 0.1s;
   padding: 5vh 0;
   background-color: $vapor;
 }
-$time2: 0.5s;
+
 .popular_destinations{
   display: block;
   margin: 1vh auto;
