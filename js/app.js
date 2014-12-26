@@ -6,10 +6,12 @@ $(document).foundation();
   var nav_bar_height = $('.navigation_bar').height();
   var $previous_navigation_selection = $('li.nav.selected');
 
+  var can_scroll = true;
+
   //clicking on navigation to scroll on page
   $('.nav').on('click', function(){
-    execute_on_scroll_function = false;
-    console.log('click: ' + execute_on_scroll_function);
+    can_scroll = false;
+    console.log('click: ' + can_scroll);
     var $destination = $(this).find('a').attr('href');
     var data_hash = {};
     data_hash['current_dom'] = $(".nav[data-navigation='" + $destination + "']");
@@ -24,7 +26,9 @@ $(document).foundation();
     if(location<0){
       location = 0;
     }
-    $('body').animate({"scrollTop": location}, "slow");
+    $('body').animate({"scrollTop": location}, "slow", function(){
+      can_scroll = true;
+    });
   });
 
   //class variables for scrolling
@@ -43,6 +47,7 @@ $(document).foundation();
 
   //switch navigation highlight on scroll event
   $(window).on('scroll', function(){
+    if(can_scroll){
       current_offset = $('.navigation_bar').offset().top;
       var data_hash = {};
       // $previous_dom = $('li.nav.selected')[0];
@@ -55,7 +60,7 @@ $(document).foundation();
       // console.log('previous_rank: ' + previous_rank);
       previous_offset = direct_index[previous_rank].offset;
 
-      if((current_offset < previous_offset-200) && (previous_rank > 0)){
+      if((current_offset < previous_offset-300) && (previous_rank > 0)){
         previous_rank -= 1;
         var current_dom_name = direct_index[previous_rank].destination;
         // data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']");
@@ -63,7 +68,7 @@ $(document).foundation();
         $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
         // toggleNavigation(data_hash);
         // data_hash['previous_dom'] = data_hash['current_dom'];
-      } else if((previous_rank < direct_index.length-1)&&(current_offset >= direct_index[previous_rank+1].offset-200)){
+      } else if((previous_rank < direct_index.length-1)&&(current_offset >= direct_index[previous_rank+1].offset-300)){
         previous_rank += 1;
         var current_dom_name = direct_index[previous_rank].destination;
         // data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
@@ -72,6 +77,7 @@ $(document).foundation();
         $('li.nav.selected').toggleClass('selected');
         $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
       }
+    }
   });
 
   function toggleNavigation(data_hash){
