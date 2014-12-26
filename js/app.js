@@ -44,30 +44,34 @@ $(document).foundation();
   $(window).on('scroll', function(){
     current_offset = $('.navigation_bar').offset().top;
     var data_hash = {};
-    $previous_dom = $('li.nav.selected')[0];
+    // $previous_dom = $('li.nav.selected')[0];
     // data_hash['previous_dom'] = $('li.nav.selected');
-    console.log('highlighted: ' + $previous_dom);
-    var previous_dom_name = data_hash['previous_dom'].data('navigation');
-    console.log("data_hash previous_dom: " + data_hash['previous_dom']);
-    console.log('previous_dom_name: ' + previous_dom_name);
+    // console.log('highlighted: ' + $previous_dom);
+    var previous_dom_name = $('li.nav.selected').data('navigation');
+    // console.log("data_hash previous_dom: " + data_hash['previous_dom']);
+    // console.log('previous_dom_name: ' + previous_dom_name);
     previous_rank = inverted_index[previous_dom_name];
-    console.log('previous_rank: ' + previous_rank);
+    // console.log('previous_rank: ' + previous_rank);
     previous_offset = direct_index[previous_rank].offset;
 
     if((current_offset < previous_offset-100) && (previous_rank > 0)){
       console.log('if less');
       previous_rank -= 1;
       var current_dom_name = direct_index[previous_rank].destination;
-      data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']");
-      toggleNavigation(data_hash);
-      data_hash['previous_dom'] = data_hash['current_dom'];
+      // data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']");
+      $('li.nav.selected').toggleClass('selected');
+      $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
+      // toggleNavigation(data_hash);
+      // data_hash['previous_dom'] = data_hash['current_dom'];
     } else if((previous_rank < direct_index.length-1)&&(current_offset >= direct_index[previous_rank+1].offset)){
       console.log('if greater');
       previous_rank += 1;
       var current_dom_name = direct_index[previous_rank].destination;
-      data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
-      toggleNavigation(data_hash);
-      data_hash['previous_dom'] = data_hash['current_dom'];
+      // data_hash['current_dom'] = $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
+      // toggleNavigation(data_hash);
+      // data_hash['previous_dom'] = data_hash['current_dom'];
+      $('li.nav.selected').toggleClass('selected');
+      $(".nav[data-navigation='" + current_dom_name + "']").toggleClass('selected');
     }
   });
 
