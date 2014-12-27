@@ -11,7 +11,6 @@ $(document).foundation();
   //clicking on navigation to scroll on page
   $('.nav').on('click', function(){
     can_scroll = false;
-    console.log('click: ' + can_scroll);
     var $destination = $(this).find('a').attr('href');
     var data_hash = {};
     data_hash['current_dom'] = $(".nav[data-navigation='" + $destination + "']");
